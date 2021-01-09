@@ -87,14 +87,14 @@ class LaboController extends Controller
         // dd($mats);
 
 
-        $l_pwd = Session::get('l_password');
+        $l_pwd = $request['l_password'];
 
-        $lpwd = $request->l_password;
+        $lpwd = $request->lpassword;
 
         // dd(Hash::check($value, $labo->l_password) );
         // dd($l_pwd);
 
-        if (Hash::check($l_pwd, $labo->l_password) || Hash::check($lpwd, $labo->l_password)) {
+        if (Hash::check($l_pwd, $labo->l_password)) {
             return view('materials.index')->with('labo',$labo)
         ->with('mats',$mats)->with('l_password', $l_pwd);
         }else {

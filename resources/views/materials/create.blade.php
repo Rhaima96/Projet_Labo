@@ -26,14 +26,14 @@
 </div>
 <div class="contact-clean" style="background: #fde8ab;">
 
-    <form method="post" style="text-align: right;" enctype="multipart/form-data" action="{{route('materiels.store', ['l_password'=>$l_password] )}} ">
+    <form method="post" style="text-align: right;" enctype="multipart/form-data" action="{{route('materiels.store',['l_password'=>$l_password])}} ">
         @csrf
         <input type="hidden" class="form-control" name="labo_id" value="{{$labo}}">
 
         <div class="form-group"><input class="form-control" type="text" name="title" placeholder="اسم المعدات"
                 autofocus="" required="" style="text-align: right;"></div>
 
-        <div class="form-group"><input class="form-control" type="hidden" name="l_password" value="{{$l_password}} "></div>
+        <div class="form-group"><input class="form-control" type="hidden" name="lpassword" value="{{$l_password}} "></div>
 
         <div class="form-group"><input class="form-control text-truncate" type="file" name="photo"></div>
 

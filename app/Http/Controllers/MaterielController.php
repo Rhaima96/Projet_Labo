@@ -25,7 +25,9 @@ class MaterielController extends Controller
     public function index()
     {
         $mat =Materiel::where('user_id', Auth::id())->get();
-        return view('materials.index', compact('mat'));
+        $l_password = $request["l_password"];
+        return view('materials.index', compact('mat','l_password'));
+
     }
 
     /**
@@ -72,14 +74,14 @@ class MaterielController extends Controller
         $mat->save();
 
         $labo = $request["labo_id"];
-        $l_password = $request["l_password"];
+        $l_password = $request->l_password;
 
         // dd($l_password);
-        Session::put('l_password', $l_password);
+        // Session::put('l_password', $l_password);
 
 
 
-        return redirect()->route('labos.show', [$labo,$l_password]) ;
+        return redirect()->route('labos.show', [$labo, 'l_password'=> $l_password]) ;
     }
 
     /**
