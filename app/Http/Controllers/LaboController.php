@@ -89,7 +89,7 @@ class LaboController extends Controller
 
         $l_pwd = $request['l_password'];
 
-        $lpwd = $request->lpassword;
+        // $lpwd = $request->lpassword;
 
         // dd(Hash::check($value, $labo->l_password) );
         // dd($l_pwd);

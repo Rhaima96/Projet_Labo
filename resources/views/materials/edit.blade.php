@@ -26,13 +26,14 @@
         </div>
 
         <div class="contact-clean" style="background: #fde8ab;">
-            <form method="post" style="text-align: right;" action="{{route('materiels.update', $mat->id, $mat->labo_id)}}" enctype="multipart/form-data">
+            <form method="post" style="text-align: right;" action="{{route('materiels.update', [$mat->id, $mat->labo_id , 'l_password'=>$l_password])}}" enctype="multipart/form-data">
 
                 @csrf
                 @method('PUT')
 
                 <div class="form-group"><input class="form-control" type="text" value="{{$mat->title}} " name="title" placeholder="اسم المعدات"
                         autofocus="" required="" style="text-align: right;"></div>
+                        <div class="form-group"><input class="form-control" type="text" name="lpassword" value="{{$l_password}} "></div>
                 <div class="form-group"><input type="file" name="photo"></div>
                 <div class="form-group"><button class="btn btn-primary" type="submit"
                         style="background: rgb(242,204,93) !important;color: rgb(0,0,0);font-family: 'Sawarabi Gothic', sans-serif;font-size: 17px;"><strong>تعديل</strong><br></button>

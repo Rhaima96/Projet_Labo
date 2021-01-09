@@ -22,7 +22,7 @@ class MaterielController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $mat =Materiel::where('user_id', Auth::id())->get();
         $l_password = $request["l_password"];
@@ -109,10 +109,15 @@ class MaterielController extends Controller
      * @param  \App\Materiel  $materiel
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $mat = Materiel::find( $id ) ;
-        return view('materials.edit',compact('mat'));
+
+        $l_password = $request['l_password'];
+
+        // dd($l_password);
+
+        return view('materials.edit',compact('mat','l_password'));
     }
 
     /**
@@ -144,7 +149,14 @@ class MaterielController extends Controller
         $labo =$mat->labo_id;
 
 
-        return redirect()->route('labos.show', $labo) ;
+        $l_password = $request['l_password'];
+
+        // dd($l_password);
+        // Session::put('l_password', $l_password);
+
+
+
+        return redirect()->route('labos.show', [$labo, 'l_password'=> $l_password]) ;
 
     }
 
