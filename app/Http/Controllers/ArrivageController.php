@@ -98,12 +98,13 @@ class ArrivageController extends Controller
      * @param  \App\Arrivage  $arrivage
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $arr = Arrivage::where('user_id', Auth::id())->get();
+        $arr= Arrivage::find($id) ;
 
 
 
+        // dd($arr);
         return view('arrives.show')
         ->with('arr',$arr);
     }

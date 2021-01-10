@@ -30,8 +30,8 @@
             @method('PUT')
             <div class="form-group"><input class="form-control" type="text" value="{{$labo->name}} " name="name" placeholder="اسم المخبر" autofocus="" required="" style="text-align: right;"></div>
             <div class="form-group"><input  class="form-control text-truncate" type="file" name="photo"></div>
-            <div class="form-group"><input class="form-control" type="password" name="l_password" placeholder="رمز العبور" style="text-align: right;"></div>
-            <div class="form-group"><input class="form-control" type="password" name="cl_password" placeholder="تأكيد رمز العبور" style="text-align: right;"></div>
+            <div class="form-group"><input class="form-control" value="{{Crypt::decryptString($labo->l_password)}} " type="password" name="l_password" placeholder="رمز العبور" style="text-align: right;"></div>
+            <div class="form-group"><input class="form-control" value="{{Crypt::decryptString($labo->l_password)}} " type="password" name="l_password_confirmation" placeholder="تأكيد رمز العبور" style="text-align: right;"></div>
             <div class="form-group"><button class="btn btn-primary" type="submit" style="background: rgb(242,204,93) !important;color: rgb(0,0,0);font-family: 'Sawarabi Gothic', sans-serif;font-size: 17px;"><strong>تعديل</strong><br></button></div>
         </form>
     </div>

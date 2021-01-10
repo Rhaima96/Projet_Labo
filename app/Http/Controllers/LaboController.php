@@ -7,7 +7,8 @@ use App\Materiel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Crypt;
+
 
 
 class LaboController extends Controller
@@ -62,7 +63,7 @@ class LaboController extends Controller
         $labo =  Labo::create([
             'name' => $request->name ,
             'photo' => $newPhoto ,
-            'l_password' => Hash::make($request->l_password ),
+            'l_password' => Crypt::encryptString($request->l_password ),
             'user_id' => Auth::id(),
         ]);
 
@@ -87,14 +88,16 @@ class LaboController extends Controller
         // dd($mats);
 
 
-        $l_pwd = $request['l_password'];
+        $l_pwd = $request['l_password'] ;
 
-        // $lpwd = $request->lpassword;
+
+
+         $lpwd = Crypt::decryptString($labo->l_password);
 
         // dd(Hash::check($value, $labo->l_password) );
-        // dd($l_pwd);
+        // dd($lpwd);
 
-        if (Hash::check($l_pwd, $labo->l_password)) {
+        if ($l_pwd === $lpwd) {
             return view('materials.index')->with('labo',$labo)
         ->with('mats',$mats)->with('l_password', $l_pwd);
         }else {
@@ -116,6 +119,7 @@ class LaboController extends Controller
     public function edit($id)
     {
         $labo = Labo::find( $id ) ;
+
         return view('labos.edit',compact('labo'));
     }
 
@@ -131,12 +135,13 @@ class LaboController extends Controller
         $labo = Labo::find( $id ) ;
         $this->validate($request,[
             'name' => 'required',
+            'l_password' => ['required', 'string', 'min:8', 'confirmed'],
 
         ]);
         $labo->name = $request->name;
 
         if ($request->has('l_password')) {
-            $labo->l_password = Hash::make($request->l_password);
+            $labo->l_password = Crypt::encryptString($request->l_password );
             $labo->save();
         }
 
