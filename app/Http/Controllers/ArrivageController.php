@@ -131,6 +131,7 @@ class ArrivageController extends Controller
     public function update(Request $request, $id)
     {
         $arr = Arrivage::find( $id ) ;
+        $input = $request->all();
         $this->validate($request,[
             'ref' => ['required', 'string', 'max:255'],
             'designation'=> 'required',
@@ -146,14 +147,22 @@ class ArrivageController extends Controller
 
         if ($request->has('photo')) {
             $photo = $request->photo;
-            $newPhoto = time().$photo->getClientOriginalName();
-            $photo->move('uploads/outils',$newPhoto);
-            $arr->photo = $newPhoto ;
+
+
+            $file_extension = $photo->getClientOriginalName();
+            $destination_path = public_path() . '/uploads/outils/';
+            $filename = $file_extension;
+
+            $request->file('photo')->move($destination_path, $filename);
+            $input['photo'] = $filename;
         }
 
-        $input = $request->all();
+
+        // $pht = $request->photo;
+        // dd($pht);
 
         $arr->fill($input)->save();
+        $arr->save();
 
         $mat =$arr->mat_id;
 

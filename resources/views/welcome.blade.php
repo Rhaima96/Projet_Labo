@@ -29,7 +29,7 @@
                 <h4>République Tunisienne<br>&nbsp;Le ministère de l'Éducation</h4>
             </div>
             <div class="col d-flex justify-content-center align-items-center" style="text-align: center;"><img
-                    class="img-fluid" src="assets/img/logo%20labo.png" style="width: 50%;"></div>
+                    class="img-fluid" src="assets/img/logo%20labo.png" style="width: 200px;"></div>
             <div class="col d-inline-flex align-items-center" style="text-align: center;"><img class="img-fluid"
                     src="assets/img/45655338_2044765728894099_37fdfg09088702618664960_o@2x.png" width="180px">
                 <h3 style="font-family: Amiri, serif;">الجمهورية التونسية<br>وزارة التربية</h3>
@@ -38,10 +38,10 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col" style="padding-top: 40px;">
+            <div class="col" style="padding-top: 25px;">
                 <div class="row">
                     <div class="col d-flex justify-content-center"><img class="img-fluid"
-                            src="assets/img/chemist-working-lab_74855-4385.png" style="width: 40%;"></div>
+                            src="assets/img/chemist-working-lab_74855-4385.png" style="width: 530px;"></div>
                 </div>
                 <div class="row">
 

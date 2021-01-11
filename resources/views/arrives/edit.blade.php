@@ -53,7 +53,7 @@
                 placeholder="N/BS" style="text-align: left;"></div>
         <div class="form-group"><input class="form-control" value="{{ date('Y-m-d',strtotime($arr->date)) }}"
                 type="date" name="date"></div>
-        <div class="form-group" style="text-align: left;"><input type="file" name="photo"></div>
+        <div class="form-group" style="text-align: left;"><input class="form-control text-truncate" type="file" name="photo"></div>
         <div class="form-group" style="text-align: left;"><button class="btn btn-primary" type="submit"
                 style="background: rgb(242,204,93) !important;color: rgb(0,0,0);">Editer<br></button></div>
     </form>

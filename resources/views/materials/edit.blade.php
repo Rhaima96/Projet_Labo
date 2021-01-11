@@ -34,7 +34,7 @@
                 <div class="form-group"><input class="form-control" type="text" value="{{$mat->title}} " name="title" placeholder="اسم المعدات"
                         autofocus="" required="" style="text-align: right;"></div>
                         <div class="form-group"><input class="form-control" type="hidden" name="lpassword" value="{{$l_password}} "></div>
-                <div class="form-group"><input type="file" name="photo"></div>
+                <div class="form-group"><input type="file" class="form-control text-truncate" name="photo"></div>
                 <div class="form-group"><button class="btn btn-primary" type="submit"
                         style="background: rgb(242,204,93) !important;color: rgb(0,0,0);font-family: 'Sawarabi Gothic', sans-serif;font-size: 17px;"><strong>تعديل</strong><br></button>
                 </div>
