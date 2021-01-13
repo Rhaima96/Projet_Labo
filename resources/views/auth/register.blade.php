@@ -29,7 +29,7 @@
                 style="background: rgba(255,255,255,0);width: 40%;">
                 @csrf
 
-                <div style="text-align: right;"><label>اسم المستخدم</label></div>
+                <div style="text-align: right;"><label>اسم المؤسسة التربوية</label></div>
                 <div class="form-group">
                     <div class="input-group mb-3"><input id="name" type="text"
                             class="form-control @error('name') is-invalid @enderror" name="name"
