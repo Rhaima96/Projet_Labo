@@ -11,7 +11,7 @@
         <div class="col" style="text-align: center;"><img class="img-fluid mt-4"
                 src="assets/img/kisspng-flag-of-tunisia-flag-of-el-salvador-flag-of-sierra-flag-tunis-5b19c89d849492.1282012415284164135431.png"
                 width="100px">
-            <h3>République Tunisienne<br>&nbsp;Le ministère de l'Éducation</h3>
+            <h3>République Tunisienne<br>&nbsp;la ministère de l'Éducation</h3>
         </div>
         <div class="col" style="text-align: center;"><img class="img-fluid"
                 src="assets/img/45655338_2044765728894099_37fdfg09088702618664960_o@2x.png" width="210px"></div>
